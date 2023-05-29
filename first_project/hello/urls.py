@@ -1,12 +1,10 @@
 # Importar una biblioteca administradora de rutas 
 from django.urls import path
-
-# importando pistas
+# Importando views del directorio actual
 from . import views
 
-# Declarando las rutas validas
 urlpatterns = [
-    path("", views.index, name="index")
-    # GET / hello/author
-    path("Author/", views.author, name="author")
+    path("", views.index, name="index"),
+    path("author/", views.author, name="author"),
+    path("<str:name>", views.greet, name="greet")
 ]
